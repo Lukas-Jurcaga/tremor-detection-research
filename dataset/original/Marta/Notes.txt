@@ -1,0 +1,28 @@
+Acceleration unit: mg
+Gyroscope unit: mdps
+Magnetometer: Not Used
+
+Sampling rate: 208 Hz
+
+
+Label Class
+None = meaningless data, can be discarded.   Hand move or Wear electrodes movements
+0 = Stationary without Tremor
+1 =  Writing without Tremor
+2 = Drawing without Tremor
+3 = Stationary with Tremor
+4 = Writing with Tremor
+5 = Drawing with Tremor
+
+
+Label  Code Notes:
+
+raw_data['Label'] = 'None'
+raw_data['Label'][600:1300] = 0
+raw_data['Label'][1425:2600] = 2
+raw_data['Label'][3000:5150] = 1
+raw_data['Label'][5150:7100] = 2
+raw_data['Label'][24500:28500] = 3
+raw_data['Label'][28500:29500] = 5
+raw_data['Label'][30000:32000] = 4
+raw_data['Label'][32600:34000] = 5

@@ -1,0 +1,40 @@
+6800-2267
+11800-3934
+17200-5734
+20200-6740
+20000-23334
+74000-24667
+78000-26000
+88000-29334
+102000-34003
+116000-38667
+120000-40000
+135000-45000
+146000-48670
+
+
+
+
+
+Label Class
+
+0 = Stationary without Tremor
+1 =  Writing without Tremor
+2 = Drawing without Tremor
+3 = Stationary with Tremor
+4 = Writing with Tremor
+5 = Drawing with Tremor
+
+
+
+Label Notes:
+
+raw_data['Label'] = 'None'
+raw_data['Label'][2267:3934] = 0
+raw_data['Label'][5734:6740] = 0
+raw_data['Label'][6740:23334] = 1
+raw_data['Label'][23334:24667] = 0
+raw_data['Label'][26000:29334] = 3
+raw_data['Label'][34003:38667] = 5
+raw_data['Label'][40000:45000] = 4
+raw_data['Label'][45000:48620] = 5
