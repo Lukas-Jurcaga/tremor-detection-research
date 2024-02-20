@@ -29,3 +29,14 @@ def cross_val_model(features, target, model, id_groupings, groupk_folds, print_s
             print("Cross-validated mean " + score_method_key + " score:", cv_scores.mean())
         results[score_method_key] = cv_scores.mean()
     return results
+
+
+def get_model_scores(models_dict, features, target, id_groupings, groupk_folds):
+    model_score_columns = list(scoring_methods.keys())
+    model_score_columns.insert(0, 'Model')
+    all_model_scores_df = pd.DataFrame(columns=model_score_columns)
+    for model_key in models_dict:
+        model_scores = cross_val_model(model=models_dict[model_key], features=features, target=target, id_groupings=id_groupings, groupk_folds=groupk_folds)
+        model_scores['Model'] = model_key
+        all_model_scores_df = pd.concat([all_model_scores_df, pd.DataFrame.from_dict(model_scores, orient='index').T], ignore_index=True)
+    return all_model_scores_df
